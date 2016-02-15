@@ -6,31 +6,21 @@ var mongoose = require('mongoose');
 var app = express();
 
 var port = process.env.PORT || 3000;
+var db = process.env.MONGOLAB_URI || 'mongodb://localhost/forevernote';
+
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static(__dirname + '/client'));
 
-
-
-
-
-
-
-var db = process.env.MONGOLAB_URI || 'mongodb://localhost/forevernote';
 mongoose.connect(db);
 mongoose.connection.on('error', function(error) {
   console.error('Database connection error:' + error);
 });
 mongoose.connection.once('open', function() {
-  console.log('Database connected to ' + db);
-});
-
-
-
-app.get('/', function(req, res) {
-  res.end('Hello World!');
+  console.log('Database connected: ' + db);
 });
 
 app.listen(port, function() {
-  console.log('Listening on port ' + port);
+  console.log('Listening on port: ' + port);
 });
