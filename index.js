@@ -5,16 +5,32 @@ var mongoose = require('mongoose');
 
 var app = express();
 
+var port = process.env.PORT || 3000;
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-mongoose.connect('mongodb://localhost/forevernote');
+
+
+
+
+
+
+var db = process.env.MONGOLAB_URI || 'mongodb://localhost/forevernote';
+mongoose.connect(db);
+mongoose.connection.on('error', function(error) {
+  console.error('Database connection error:' + error);
+});
+mongoose.connection.once('open', function() {
+  console.log('Database connected to ' + db);
+});
+
+
 
 app.get('/', function(req, res) {
   res.end('Hello World!');
 });
 
-app.listen(process.env.PORT || 3000, function() {
-  console.log("Listening on port 3000");
+app.listen(port, function() {
+  console.log('Listening on port ' + port);
 });
