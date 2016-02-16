@@ -2,6 +2,7 @@ angular.module('note', [])
 
 .controller('NoteController', function ($scope, Note) {
   $scope.note = {
+    title: '',
     text: ''
   };
   

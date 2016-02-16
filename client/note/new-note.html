@@ -1,5 +1,8 @@
 <form name='note-form'  ng-submit='saveNote()'>
-  <input type='text' placeholder='new note' ng-model='note.text'>
-  <p>Your note: {{ note.text }}</p>
+  <input type='text' placeholder='new note' ng-model='note.title'>
+  <textarea rows="4" cols="50" ng-model='note.text'></textarea>
   <button type='submit'>save</button>
+
+  <p>title: {{ note.title }}</p>
+  <p>Your note: {{ note.text }}</p>
 </form>
