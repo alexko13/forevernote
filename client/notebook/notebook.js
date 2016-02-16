@@ -5,6 +5,10 @@ angular.module('notebook', [])
   $scope.notebook = {
     title: ''
   };
+
+  $scope.useNotebook = function(notebook) {
+    Notebook.currentNotebook = notebook;
+  };
   
   $scope.saveNotebook = function() {
     Notebook.saveNotebook($scope.notebook)

@@ -2,7 +2,7 @@
   <input type="text" ng-model="search" placeholder="search">
   <div ng-repeat="notebook in allNotebooks | filter: search | orderBy: '-createdAt'">
     <div>
-      <h2>{{ notebook.title }}</h2>
+      <h2 ng-click='useNotebook(notebook)'>{{ notebook.title }}</h2>
     </div>
   </div>
 </div>

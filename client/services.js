@@ -29,6 +29,8 @@ angular.module('services', [])
 
 .factory('Notebook', function($http) {
 
+  var currentNotebook= {};
+
   var getNotebooks = function() {
     return $http({
       method: 'GET',
@@ -49,6 +51,7 @@ angular.module('services', [])
   };
   
   return {
+    currentNotebook: currentNotebook,
     getNotebooks: getNotebooks,
     saveNotebook: saveNotebook
   };
