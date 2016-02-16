@@ -8,7 +8,13 @@ var NoteSchema = new mongoose.Schema({
   text: {
     type: String,
     required: true
-  }
+  },
+  createdAt: Date
+});
+
+NoteSchema.pre('save', function(done) {
+  this.createdAt = new Date();
+  done();
 });
 
 module.exports = mongoose.model('note', NoteSchema);
