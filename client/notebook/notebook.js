@@ -8,6 +8,7 @@ angular.module('notebook', [])
 
   $scope.useNotebook = function(notebook) {
     Notebook.currentNotebook = notebook;
+    $location.url('/display-notes');
   };
   
   $scope.saveNotebook = function() {

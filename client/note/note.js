@@ -1,6 +1,6 @@
 angular.module('note', [])
 
-.controller('NoteController', function ($scope, $location, Note) {
+.controller('NoteController', function ($scope, $location, Note, Notebook) {
   $scope.allNotes = [];
   $scope.note = {
     title: '',
@@ -19,6 +19,7 @@ angular.module('note', [])
   };
 
   $scope.getNotes = function() {
+    console.log('current notebook when getitng notes is', Notebook.currentNotebook);
     Note.getNotes()
     .then(function(resp) {
       console.log(resp);
