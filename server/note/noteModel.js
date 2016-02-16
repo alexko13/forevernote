@@ -7,4 +7,4 @@ var NoteSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('note', UserSchema);
+module.exports = mongoose.model('note', NoteSchema);
