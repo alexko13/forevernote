@@ -4,15 +4,10 @@
   <meta charset='utf-8' />
   <title>Forevernote</title>
 </head>
-<body ng-controller='NoteController'>
+<body>
   <h1>Forevernote</h1>
 
-  <form name='note-form'  ng-submit='saveNote()'>
-    <input type='text' placeholder='new note' ng-model='note'>
-    <p>Your note: {{ note }}</p>
-
-    <button type='submit'>save</button>
-  </form>
+  <div ng-view></div>
 
   <script src='lib/angular/angular.js'></script>
   <script src='note/note.js'></script>
