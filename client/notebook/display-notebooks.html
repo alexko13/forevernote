@@ -1,6 +1,5 @@
 <div data-ng-init="getNotebooks()">
   <h2>All Notebooks</h2>
-  <input type="text" ng-model="search" placeholder="search">
   <div ng-repeat="notebook in allNotebooks | filter: search | orderBy: '-createdAt'">
     <div>
       <h3 ng-click='useNotebook(notebook)'>{{ notebook.title }}</h3>

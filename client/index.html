@@ -6,15 +6,18 @@
   <link rel="stylesheet" type="text/css" href="lib/Materialize/dist/css/materialize.min.css">
 </head>
 <body>
-  <header>
-    <h1>Forevernote</h1>
-    <nav role='navigation'>
+  <nav role='navigation'>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">Forevernote</a>
       <ul>
         <li><a href="#/display-notebooks">All Notebooks</a></li>
         <li><a href="#/new-notebook">New Notebook</a></li>
       </ul>
-    </nav>
-  </header>
+      <div class="input-field right">
+        <input id="search" type="search" placeholder='search' ng-model="search" required>
+      </div>
+    </div>
+  </nav>
 
   <div ng-view></div>
 
