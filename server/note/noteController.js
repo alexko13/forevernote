@@ -3,11 +3,17 @@ var Note = require('./noteModel.js');
 module.exports = {
 
   getNotes: function(req, res, next) {
-    //retrieve notes from db
   },
   
   saveNote: function(req, res, next) {
-    //save note to db
+    var note = req.body;
+    Note.create(note, function(error, doc) {
+      if(error) {
+        res.json(error);
+      } else {
+        res.json(note);
+      }
+    });
   }
 
 };
