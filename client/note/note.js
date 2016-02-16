@@ -20,11 +20,10 @@ angular.module('note', [])
   };
 
   $scope.getNotes = function() {
-    console.log('current notebook when getitng notes is', Notebook.currentNotebook);
     Note.getNotes(Notebook.currentNotebook)
     .then(function(resp) {
       console.log(resp);
-      $scope.allNotes = resp.data;
+      $scope.allNotes = resp.data.notes;
     })
     .catch(function(err) {
       console.error(err);

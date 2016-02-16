@@ -3,18 +3,9 @@ var Notebook = require('../notebook/notebookModel.js');
 
 module.exports = {
   getNotes: function(req, res, next) {
-
-    // console.log('in back end notebook is', req.query._id);
-    // Notebook.findById(req.query._id)
-    // .populate('notes')
-    // .exec(function(error, doc) {
-    //   console.log('populated notebook', doc);
-    // });
-
-
-    Note.find({
-      //"notebook._id": req.query._id
-    }, function(error, doc) {
+    Notebook.findById(req.query._id)
+    .populate('notes')
+    .exec(function(error, doc) {
       if(error) {
         res.json(error);
       } else {

@@ -2,10 +2,11 @@ angular.module('services', [])
 
 .factory('Note', function($http) {
 
-  var getNotes = function() {
+  var getNotes = function(notebook) {
     return $http({
       method: 'GET',
-      url: '/api/note'
+      url: '/api/note',
+      params: notebook
     }).then(function (resp) {
       return resp;
     });
@@ -15,7 +16,7 @@ angular.module('services', [])
     return $http({
       method: 'POST',
       url: '/api/note',
-      data: noteg
+      data: note
     }).then(function (resp) {
       return resp;
     });
