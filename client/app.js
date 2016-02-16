@@ -1,7 +1,7 @@
 angular.module('forevernote', [
   'services',
   'note',
-  'notebooks',
+  'notebook',
   'ngRoute',
   ])
 
