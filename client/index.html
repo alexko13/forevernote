@@ -3,16 +3,18 @@
 <head>
   <meta charset='utf-8' />
   <title>Forevernote</title>
+  <link rel="stylesheet" type="text/css" href="lib/Materialize/dist/css/materialize.min.css">
 </head>
 <body>
-  <h1>Forevernote</h1>
-
-  <nav>
-    <ul>
-      <li><a href="#/display-notes">All Notes</a></li>
-      <li><a href="#/new-note">New Note</a></li>
-    </ul>
-  </nav>
+  <header class='light-blue'>
+    <h1 class='light-blue'>Forevernote</h1>
+    <nav role='navigation'>
+      <ul>
+        <li><a href="#/display-notes">All Notes</a></li>
+        <li><a href="#/new-note">New Note</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <div ng-view></div>
 
