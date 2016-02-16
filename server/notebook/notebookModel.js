@@ -13,4 +13,4 @@ NotebookSchema.pre('save', function(done) {
   done();
 });
 
-module.exports = mongoose.model('notebook', NotebookSchema);
+module.exports = mongoose.model('Notebook', NotebookSchema);
