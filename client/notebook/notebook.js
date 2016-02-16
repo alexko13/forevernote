@@ -15,7 +15,8 @@ angular.module('notebook', [])
     Notebook.saveNotebook($scope.notebook)
     .then(function(resp) {
       console.log(resp);
-      $location.url('/display-notebooks');
+      Notebook.currentNotebook = resp.data;
+      $location.url('/display-notes');
     })
     .catch(function(err) {
       console.error(err);
