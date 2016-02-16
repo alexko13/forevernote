@@ -8,6 +8,7 @@ angular.module('note', [])
   };
   
   $scope.saveNote = function() {
+    $scope.note.notebook = Notebook.currentNotebook;
     Note.saveNote($scope.note)
     .then(function(resp) {
       console.log(resp);
@@ -20,7 +21,7 @@ angular.module('note', [])
 
   $scope.getNotes = function() {
     console.log('current notebook when getitng notes is', Notebook.currentNotebook);
-    Note.getNotes()
+    Note.getNotes(Notebook.currentNotebook)
     .then(function(resp) {
       console.log(resp);
       $scope.allNotes = resp.data;
