@@ -1,8 +1,9 @@
 <div data-ng-init="getNotes()">
+  <h2>{{ currentNotebook }}</h2>
   <input type="text" ng-model="search" placeholder="search">
   <div ng-repeat="note in allNotes | filter: search | orderBy: '-createdAt'">
     <div>
-      <h2 ng-click='showDetails = ! showDetails'>{{ note.title }}</h2>
+      <h3 ng-click='showDetails = ! showDetails'>{{ note.title }}</h3>
       <div ng-show='showDetails'>
         <p>{{ note.text }}</p>
         <p>{{ note.createdAt }}</p>

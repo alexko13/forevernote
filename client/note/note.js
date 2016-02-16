@@ -6,6 +6,7 @@ angular.module('note', [])
     title: '',
     text: ''
   };
+  $scope.currentNotebook = Notebook.currentNotebook.title;
   
   $scope.saveNote = function() {
     $scope.note.notebook = Notebook.currentNotebook;
