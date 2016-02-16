@@ -1,6 +1,7 @@
 angular.module('forevernote', [
   'services',
   'note',
+  'notebooks',
   'ngRoute',
   ])
 
@@ -14,8 +15,16 @@ angular.module('forevernote', [
     templateUrl: 'note/display-notes.html',
     controller: 'NoteController'
   })
+  .when('/new-notebook', {
+    templateUrl: 'notebook/new-notebook.html',
+    controller: 'NotebookController'
+  })
+  .when('/display-notebooks', {
+    templateUrl: 'notebook/display-notebooks.html',
+    controller: 'NotebookController'
+  })
   .otherwise({
-    redirectTo: '/display-notes'
+    redirectTo: '/display-notebooks'
   });
   
 });
