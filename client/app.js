@@ -1,7 +1,9 @@
 angular.module('forevernote', [
+  'services',
   'note',
-  'ngRoute'
+  'ngRoute',
   ])
+
 .config(function($routeProvider) {
   $routeProvider
   .when('/new-note', {
@@ -11,4 +13,5 @@ angular.module('forevernote', [
   .otherwise({
     redirectTo: '/new-note'
   });
+  
 });
