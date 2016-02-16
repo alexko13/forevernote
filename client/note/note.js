@@ -1,20 +1,18 @@
 angular.module('note', [])
 
 .controller('NoteController', function ($scope, Note) {
-  $scope.note = '';
+  $scope.note = {
+    text: ''
+  };
   
   $scope.saveNote = function() {
-    console.log('Saving Note ...');
-    console.log($scope.note);
-
-    Note.saveNote({text: $scope.note})
+    Note.saveNote($scope.note)
     .then(function(resp) {
       console.log(resp);
     })
     .catch(function(err) {
       console.error(err);
     });
-
   };
 
 });
