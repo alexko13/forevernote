@@ -1,0 +1,10 @@
+<div>
+  <input type="text" ng-model="search" placeholder="search">
+  <div ng-repeat="note in data.notes | filter:search | orderBy: 'createdAt'">
+    <div>
+      <h2>{{ note.title }}</h2>
+      <p>{{ note.text }}</p>
+      <p>{{ note.createdAt }}</p>
+    </div>
+  </div>
+</div>

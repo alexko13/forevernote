@@ -10,6 +10,10 @@ angular.module('forevernote', [
     templateUrl: 'note/new-note.html',
     controller: 'NoteController'
   })
+  .when('/display-notes', {
+    templateUrl: 'note/display-notes.html',
+    controller: 'NoteController'
+  })
   .otherwise({
     redirectTo: '/new-note'
   });
