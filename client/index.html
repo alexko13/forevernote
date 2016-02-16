@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app='forevernote'>
 <head>
-  <meta charset="utf-8" />
+  <meta charset='utf-8' />
   <title>Forevernote</title>
 </head>
 <body ng-controller='NoteController'>
   <h1>Forevernote</h1>
 
-  <form name='note-form'>
-    <input type='text' placeholder="new note" ng-model="note" ng-submit='saveNote()'>
+  <form name='note-form'  ng-submit='saveNote()'>
+    <input type='text' placeholder='new note' ng-model='note'>
     <p>Your note: {{ note }}</p>
 
-    <button type='submit'></button>
+    <button type='submit'>save</button>
   </form>
 
-  <script src="lib/angular/angular.js"></script>
-  <script src="app/note.js"></script>
+  <script src='lib/angular/angular.js'></script>
+  <script src='note/note.js'></script>
+  <script src='app.js'></script>
 </body>
 </html>
