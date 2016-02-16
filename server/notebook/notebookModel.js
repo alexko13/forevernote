@@ -5,6 +5,10 @@ var NotebookSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  notes: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Note'
+  }],
   createdAt: Date
 });
 
