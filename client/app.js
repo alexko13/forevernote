@@ -15,7 +15,7 @@ angular.module('forevernote', [
     controller: 'NoteController'
   })
   .otherwise({
-    redirectTo: '/new-note'
+    redirectTo: '/display-notes'
   });
   
 });
