@@ -15,7 +15,7 @@ angular.module('services', [])
     return $http({
       method: 'POST',
       url: '/api/note',
-      data: note
+      data: noteg
     }).then(function (resp) {
       return resp;
     });
@@ -24,5 +24,32 @@ angular.module('services', [])
   return {
     getNotes: getNotes,
     saveNote: saveNote
+  };
+})
+
+.factory('Notebook', function($http) {
+
+  var getNotebooks = function() {
+    return $http({
+      method: 'GET',
+      url: '/api/notebook'
+    }).then(function (resp) {
+      return resp;
+    });
+  };
+  
+  var saveNotebook = function(notebook) {
+    return $http({
+      method: 'POST',
+      url: '/api/notebook',
+      data: notebook
+    }).then(function (resp) {
+      return resp;
+    });
+  };
+  
+  return {
+    getNotebooks: getNotebooks,
+    saveNotebook: saveNotebook
   };
 });
