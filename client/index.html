@@ -5,8 +5,8 @@
   <title>Forevernote</title>
   <link rel="stylesheet" type="text/css" href="lib/Materialize/dist/css/materialize.min.css">
 </head>
-<body>
-  <nav role='navigation'>
+<body class='blue lighten-5'>
+  <nav class='blue lighten-1' role='navigation'>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo center">Forevernote</a>
       <ul>
@@ -19,7 +19,7 @@
     </div>
   </nav>
 
-  <div ng-view></div>
+  <div class='center' ng-view></div>
 
   <script src='lib/angular/angular.js'></script>
   <script src="lib/angular-route/angular-route.js"></script>
@@ -27,5 +27,6 @@
   <script src='note/note.js'></script>
   <script src='services.js'></script>
   <script src='app.js'></script>
+  <script src='lib/jquery/dist/jquery.min.js'></script>
 </body>
 </html>

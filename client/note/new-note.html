@@ -1,11 +1,20 @@
 <div>
   <h2>{{ currentNotebook }} | New Note</h2>
-  <form name='note-form'  ng-submit='saveNote()'>
-    <input type='text' placeholder='new note' ng-model='note.title'>
-    <textarea rows="4" cols="50" ng-model='note.text'></textarea>
-    <button type='submit'>save</button>
-
-    <p>title: {{ note.title }}</p>
-    <p>Your note: {{ note.text }}</p>
-  </form>
+  <div class="row">
+    <form name='note-form'  ng-submit='saveNote()'>
+      <div class='row'>
+        <div class="input-field col s12">
+          <input type='text' placeholder='note title' ng-model='note.title'>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id='note-text' class="materialize-textarea" style="height:25vh;" ng-model='note.text'></textarea>
+        </div>
+      </div>
+      <div class="row">
+      <button class='btn-large waves-effect waves-light blue lighten-1 col s12' type='submit'>save</button>
+      </div>
+    </form>
+  </div>
 </div>
