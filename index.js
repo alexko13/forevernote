@@ -34,6 +34,6 @@ app.route('/api/note')
     res.json('200');
   })
   .post(function (req, res, next) {
-    //console.log(req.body);
-    res.json('req.body');
+    console.log(req.body);
+    res.json(req.body);
   });

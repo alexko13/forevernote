@@ -10,7 +10,7 @@ angular.module('note', [])
     $http({
       method: 'POST',
       url: '/api/note',
-      data: { test: 'test' }
+      data: { note: $scope.note }
     });
 
   };
