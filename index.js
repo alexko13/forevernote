@@ -1,20 +1,16 @@
 var express = require('express');
-var morgan = require('morgan');
-var bodyParser = require('body-parser');
 var db = require('./server/database');
-db.connect();
+var middleware = require('./server/middleware');
+
 
 var app = express();
-
 var port = process.env.PORT || 3000;
 
-app.use(morgan('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static(__dirname + '/client'));
 
 
 
+db.connect();
+middleware.use(app, express);
 
 
 app.route('/api/note')
