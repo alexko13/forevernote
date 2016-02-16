@@ -1,6 +1,6 @@
 angular.module('note', [])
 
-.controller('NoteController', function ($scope, Note) {
+.controller('NoteController', function ($scope, $location, Note) {
   $scope.allNotes = [];
   $scope.note = {
     title: '',
@@ -11,6 +11,7 @@ angular.module('note', [])
     Note.saveNote($scope.note)
     .then(function(resp) {
       console.log(resp);
+      $location.url('/display-notes');
     })
     .catch(function(err) {
       console.error(err);
@@ -18,7 +19,6 @@ angular.module('note', [])
   };
 
   $scope.getNotes = function() {
-    console.log('GET ALL NOTES ......');
     Note.getNotes()
     .then(function(resp) {
       console.log(resp);
