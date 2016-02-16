@@ -3,6 +3,13 @@ var Note = require('./noteModel.js');
 module.exports = {
 
   getNotes: function(req, res, next) {
+    Note.find({}, function(error, doc) {
+      if(error) {
+        res.json(error);
+      } else {
+        res.json(doc);
+      }
+    });
   },
   
   saveNote: function(req, res, next) {
@@ -11,7 +18,7 @@ module.exports = {
       if(error) {
         res.json(error);
       } else {
-        res.json(note);
+        res.json(doc);
       }
     });
   }
