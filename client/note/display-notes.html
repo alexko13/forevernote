@@ -1,8 +1,8 @@
 <div class='row' data-ng-init="getNotes()">
-  <h2>{{ currentNotebook }} | All Notes</h2>
-  <div class='row' ng-repeat="note in allNotes | filter: search | orderBy: '-createdAt'">
+  <h2>{{ currentNotebook }}</h2>
+  <div class='hoverable' ng-repeat="note in allNotes | filter: search | orderBy: '-createdAt'">
     <div>
-      <h3 ng-click='showDetails = ! showDetails'>{{ note.title }}</h3>
+      <h3 class='truncate' ng-click='showDetails = ! showDetails'>{{ note.title }}</h3>
       <div class='row' ng-show='showDetails'>
         <p>{{ note.text }}</p>
         <p>{{ note.createdAt }}</p>

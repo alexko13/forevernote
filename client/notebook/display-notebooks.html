@@ -1,8 +1,6 @@
 <div data-ng-init="getNotebooks()">
   <h2>All Notebooks</h2>
-  <div ng-repeat="notebook in allNotebooks | filter: search | orderBy: '-createdAt'">
-    <div>
-      <h3 ng-click='useNotebook(notebook)'>{{ notebook.title }}</h3>
-    </div>
+  <div class='hoverable' ng-repeat="notebook in allNotebooks | filter: search | orderBy: '-createdAt'">
+    <h3 class='truncate' ng-click='useNotebook(notebook)'>{{ notebook.title }}</h3>
   </div>
 </div>
