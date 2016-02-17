@@ -3,8 +3,8 @@
   <div class='hoverable' ng-repeat="note in allNotes | filter: search | orderBy: '-createdAt'">
     <div>
       <h3 class='truncate' ng-click='showDetails = ! showDetails'>{{ note.title }}</h3>
-      <div class='row' ng-show='showDetails'>
-        <p>{{ note.text }}</p>
+      <div class='container' ng-show='showDetails'>
+        <p class='left-align'>{{ note.text }}</p>
         <p>{{ note.createdAt }}</p>
       </div>
     </div>
