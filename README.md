@@ -7,7 +7,7 @@ Scatterd notes in different formats is a thing of the past.
 This app will help you stay more organized by allowing you to easily access all your notes online.
 
 ### How to get started 
-Log on to _______ to start taking better notes today!
+Log on to [Forevernote](https://alex-forevernote.herokuapp.com/) to start taking better notes today!
 
 * "This app will revolutionize how people take notes everwhere!" - Alex Ko, CEO
 * "Using this app has made me so organized and more productive. It has truely changed my life" - Billy Gates, Customer
