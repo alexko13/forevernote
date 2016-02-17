@@ -1,13 +1,21 @@
-<div data-ng-init="getNotes()">
+<div class='row' data-ng-init="getNotes()">
   <h2>{{ currentNotebook }} | All Notes</h2>
-  <button><a href='#/new-note'>Add New Note</a></button>
-  <div ng-repeat="note in allNotes | filter: search | orderBy: '-createdAt'">
+  <div class='row' ng-repeat="note in allNotes | filter: search | orderBy: '-createdAt'">
     <div>
       <h3 ng-click='showDetails = ! showDetails'>{{ note.title }}</h3>
-      <div ng-show='showDetails'>
+      <div class='row' ng-show='showDetails'>
         <p>{{ note.text }}</p>
         <p>{{ note.createdAt }}</p>
       </div>
     </div>
+  </div>
+  <div class='row'>
+    <form ng-submit='goToNewNote()'>
+      <div class='row'>
+        <div class="input-field col s12">
+          <button class='btn-large waves-effect waves-light teal col s12' type='submit'>Add New Note</button>
+        </div>
+      </div>
+    </form>
   </div>
 </div>

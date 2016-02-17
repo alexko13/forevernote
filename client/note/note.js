@@ -6,6 +6,7 @@ angular.module('note', [])
     title: '',
     text: ''
   };
+
   $scope.currentNotebook = Notebook.currentNotebook.title;
   
   $scope.saveNote = function() {
@@ -29,6 +30,10 @@ angular.module('note', [])
     .catch(function(err) {
       console.error(err);
     });
+  };
+
+  $scope.goToNewNote = function() {
+    $location.url('/new-note');
   };
 
 });

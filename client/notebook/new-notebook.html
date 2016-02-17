@@ -1,9 +1,18 @@
 <div>
   <h2>New Notebook</h2>
-  <form name='notebook-form'  ng-submit='saveNotebook()'>
-    <input type='text' placeholder='new notebook' ng-model='notebook.title'>
-    <button type='submit'>save</button>
-
-    <p>title: {{ notebook.title }}</p>
-  </form>
+  <div class="row">
+    <form name='notebook-form'  ng-submit='saveNotebook()'>
+      <div class='row'>
+        <div class="input-field col s12">
+          <input type='text' placeholder='new notebook' ng-model='notebook.title'>
+        </div>
+      </div>
+      <div class='row'>
+        <div class="input-field col s12">
+          <button class='btn-large waves-effect waves-light teal col s12' type='submit'>save</button>
+        </div>
+      </div>
+      <p>title: {{ notebook.title }}</p>
+    </form>
+  </div>
 </div>
